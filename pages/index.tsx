@@ -6,152 +6,113 @@ export default function Home() {
       maxWidth: '900px',
       margin: '0 auto',
       padding: '40px 20px',
-      fontFamily: 'monospace',
-      backgroundColor: '#1e1e1e',
-      color: '#d4d4d4',
-      minHeight: '100vh'
+      fontFamily: 'Courier New, monospace',
+      backgroundColor: '#000000',
+      color: '#00ff00',
+      minHeight: '100vh',
+      fontSize: '14px'
     }}>
       <div style={{ 
-        borderBottom: '2px solid #3794ff',
-        paddingBottom: '20px',
         marginBottom: '30px'
       }}>
-        <h1 style={{ 
-          fontSize: '28px',
-          margin: '0 0 10px 0',
-          color: '#3794ff'
-        }}>Activity Booking API</h1>
-        <p style={{ 
-          margin: 0,
-          color: '#858585',
-          fontSize: '14px'
-        }}>REST API Documentation v1.0.0</p>
+        <div style={{ marginBottom: '20px' }}>
+          <span style={{ color: '#00ff00' }}>root@activity-booking-api:~$</span> status
+        </div>
+        <div style={{ color: '#808080', marginBottom: '5px' }}>
+          [OK] Service running
+        </div>
+        <div style={{ color: '#808080', marginBottom: '5px' }}>
+          [OK] Database connected
+        </div>
+        <div style={{ color: '#808080', marginBottom: '20px' }}>
+          [OK] All systems operational
+        </div>
       </div>
 
-      <section style={{ marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '18px',
-          color: '#4ec9b0',
-          marginBottom: '15px'
-        }}>Base URL</h2>
-        <pre style={{ 
-          background: '#252526',
-          padding: '15px',
-          borderRadius: '4px',
-          border: '1px solid #3c3c3c',
-          overflow: 'auto'
-        }}>
-          <code>https://activity-booking-5o1k.onrender.com</code>
-        </pre>
-      </section>
+      <div style={{ 
+        marginBottom: '30px',
+        paddingLeft: '20px',
+        borderLeft: '2px solid #00ff00'
+      }}>
+        <div style={{ marginBottom: '10px' }}>
+          Activity Booking API - v1.0.0
+        </div>
+        <div style={{ color: '#808080', fontSize: '12px' }}>
+          Base URL: https://activity-booking-5o1k.onrender.com
+        </div>
+      </div>
 
-      <section style={{ marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '18px',
-          color: '#4ec9b0',
-          marginBottom: '15px'
-        }}>Authentication Endpoints</h2>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>POST /api/auth/register</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Register new user account</div>
+      <div style={{ marginBottom: '30px' }}>
+        <div style={{ marginBottom: '15px', color: '#00ff00' }}>
+          &gt; AUTHENTICATION ENDPOINTS
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>POST /api/auth/login</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Authenticate user and receive JWT token</div>
+        <div style={{ marginLeft: '20px', color: '#c0c0c0' }}>
+          <div style={{ marginBottom: '8px' }}>POST /api/auth/register</div>
+          <div style={{ marginBottom: '8px' }}>POST /api/auth/login</div>
         </div>
-      </section>
+      </div>
 
-      <section style={{ marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '18px',
-          color: '#4ec9b0',
-          marginBottom: '15px'
-        }}>Activity Endpoints</h2>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>GET /api/activities</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Retrieve all activities</div>
+      <div style={{ marginBottom: '30px' }}>
+        <div style={{ marginBottom: '15px', color: '#00ff00' }}>
+          &gt; ACTIVITY ENDPOINTS
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>GET /api/activities/:id</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Retrieve single activity by ID</div>
+        <div style={{ marginLeft: '20px', color: '#c0c0c0' }}>
+          <div style={{ marginBottom: '8px' }}>GET /api/activities</div>
+          <div style={{ marginBottom: '8px' }}>GET /api/activities/:id</div>
+          <div style={{ marginBottom: '8px' }}>POST /api/activities [AUTH REQUIRED]</div>
+          <div style={{ marginBottom: '8px' }}>PUT /api/activities/:id [AUTH REQUIRED]</div>
+          <div style={{ marginBottom: '8px' }}>DELETE /api/activities/:id [AUTH REQUIRED]</div>
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>POST /api/activities</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Create new activity (requires admin authentication)</div>
-        </div>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>PUT /api/activities/:id</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Update activity (requires admin authentication)</div>
-        </div>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>DELETE /api/activities/:id</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Delete activity (requires admin authentication)</div>
-        </div>
-      </section>
+      </div>
 
-      <section style={{ marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '18px',
-          color: '#4ec9b0',
-          marginBottom: '15px'
-        }}>Booking Endpoints</h2>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>POST /api/bookings</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Create new booking (requires authentication)</div>
+      <div style={{ marginBottom: '30px' }}>
+        <div style={{ marginBottom: '15px', color: '#00ff00' }}>
+          &gt; BOOKING ENDPOINTS
         </div>
-        <div style={{ marginBottom: '15px' }}>
-          <div style={{ color: '#ce9178', marginBottom: '5px' }}>GET /api/bookings/me</div>
-          <div style={{ color: '#858585', fontSize: '13px', marginLeft: '20px' }}>Retrieve authenticated user bookings</div>
+        <div style={{ marginLeft: '20px', color: '#c0c0c0' }}>
+          <div style={{ marginBottom: '8px' }}>POST /api/bookings [AUTH REQUIRED]</div>
+          <div style={{ marginBottom: '8px' }}>GET /api/bookings/me [AUTH REQUIRED]</div>
         </div>
-      </section>
+      </div>
 
-      <section style={{ marginBottom: '40px' }}>
-        <h2 style={{ 
-          fontSize: '18px',
-          color: '#4ec9b0',
-          marginBottom: '15px'
-        }}>Authentication</h2>
-        <p style={{ color: '#d4d4d4', fontSize: '14px', lineHeight: '1.6' }}>
-          Protected endpoints require Bearer token authentication. Include the JWT token in the Authorization header:
-        </p>
-        <pre style={{ 
-          background: '#252526',
-          padding: '15px',
-          borderRadius: '4px',
-          border: '1px solid #3c3c3c',
-          overflow: 'auto',
-          fontSize: '13px'
-        }}>
-          <code>Authorization: Bearer &lt;token&gt;</code>
-        </pre>
-      </section>
-
-      <section>
-        <h2 style={{ 
-          fontSize: '18px',
-          color: '#4ec9b0',
-          marginBottom: '15px'
-        }}>Response Codes</h2>
-        <div style={{ fontSize: '13px', lineHeight: '1.8' }}>
-          <div><span style={{ color: '#4ec9b0' }}>200</span> <span style={{ color: '#858585' }}>- Success</span></div>
-          <div><span style={{ color: '#4ec9b0' }}>201</span> <span style={{ color: '#858585' }}>- Created</span></div>
-          <div><span style={{ color: '#ce9178' }}>400</span> <span style={{ color: '#858585' }}>- Bad Request</span></div>
-          <div><span style={{ color: '#ce9178' }}>401</span> <span style={{ color: '#858585' }}>- Unauthorized</span></div>
-          <div><span style={{ color: '#ce9178' }}>403</span> <span style={{ color: '#858585' }}>- Forbidden</span></div>
-          <div><span style={{ color: '#ce9178' }}>404</span> <span style={{ color: '#858585' }}>- Not Found</span></div>
-          <div><span style={{ color: '#ce9178' }}>500</span> <span style={{ color: '#858585' }}>- Internal Server Error</span></div>
+      <div style={{ marginBottom: '30px' }}>
+        <div style={{ marginBottom: '15px', color: '#00ff00' }}>
+          &gt; AUTHENTICATION
         </div>
-      </section>
+        <div style={{ marginLeft: '20px', color: '#c0c0c0', fontSize: '13px' }}>
+          <div>Include JWT token in request headers:</div>
+          <div style={{ marginTop: '10px', color: '#808080' }}>
+            Authorization: Bearer &lt;token&gt;
+          </div>
+        </div>
+      </div>
+
+      <div style={{ marginBottom: '30px' }}>
+        <div style={{ marginBottom: '15px', color: '#00ff00' }}>
+          &gt; HTTP STATUS CODES
+        </div>
+        <div style={{ marginLeft: '20px', color: '#c0c0c0', fontSize: '13px', lineHeight: '1.8' }}>
+          <div>200 OK</div>
+          <div>201 CREATED</div>
+          <div>400 BAD REQUEST</div>
+          <div>401 UNAUTHORIZED</div>
+          <div>403 FORBIDDEN</div>
+          <div>404 NOT FOUND</div>
+          <div>500 INTERNAL SERVER ERROR</div>
+        </div>
+      </div>
 
       <div style={{
-        marginTop: '60px',
+        marginTop: '40px',
         paddingTop: '20px',
-        borderTop: '1px solid #3c3c3c',
-        textAlign: 'center',
-        color: '#858585',
-        fontSize: '12px'
+        borderTop: '1px solid #1a1a1a',
+        color: '#808080',
+        fontSize: '11px'
       }}>
-        <p>Built with Next.js • Prisma • PostgreSQL</p>
+        <div>Next.js | Prisma | PostgreSQL</div>
+        <div style={{ marginTop: '5px' }}>
+          <span style={{ color: '#00ff00' }}>root@activity-booking-api:~$</span> _
+        </div>
       </div>
     </div>
   );
