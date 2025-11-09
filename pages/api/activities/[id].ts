@@ -54,7 +54,7 @@ export default async function handler(
 
       const { title, description, date, capacity } = validation.data;
 
-      const updateData: any = {};
+      const updateData: Record<string, unknown> = {};
       if (title !== undefined) updateData.title = title;
       if (description !== undefined) updateData.description = description;
       if (date !== undefined) updateData.date = new Date(date);
@@ -66,8 +66,9 @@ export default async function handler(
       });
 
       return res.status(200).json(activity);
-    } catch (error: any) {
-      if (error.code === 'P2025') {
+    } catch (error) {
+      const prismaError = error as { code?: string };
+      if (prismaError.code === 'P2025') {
         return res.status(404).json({ error: 'Activity not found' });
       }
       console.error('Update activity error:', error);
@@ -85,8 +86,9 @@ export default async function handler(
       });
 
       return res.status(200).json({ message: 'Activity deleted successfully' });
-    } catch (error: any) {
-      if (error.code === 'P2025') {
+    } catch (error) {
+      const prismaError = error as { code?: string };
+      if (prismaError.code === 'P2025') {
         return res.status(404).json({ error: 'Activity not found' });
       }
       console.error('Delete activity error:', error);

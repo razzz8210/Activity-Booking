@@ -2,7 +2,7 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { prisma } from '../../../lib/prisma';
-import { requireAuth, requireAdmin, AuthenticatedRequest } from '../../../middleware/auth';
+import { requireAdmin, AuthenticatedRequest } from '../../../middleware/auth';
 import { createActivitySchema } from '../../../utils/validation';
 
 export default async function handler(
